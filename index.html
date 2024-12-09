@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
+    <script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #E2E3E4;
+            font-family: 'Montserrat', sans-serif;
+            color: #0071BC;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #F15A24;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 97%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #F15A24;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            color: #F15A24;
+        }
+
+        input[type="submit"] {
+            background-color: #F15A24;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #D04C1B;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="starkcloud-logo.webp" alt="StarkCloud" class="logo">
+
+    <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="jobTitle">Cargo:</label>
+        <input type="text" id="jobTitle" name="jobTitle">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Telefone:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <input type="hidden" id="scOrigenLead" name="scOrigenLead" value="No-Code-SP">
+        <input type="hidden" id="scArea" name="scArea" value="Creatio">
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        var config = {
+            fields: {
+                "Contact": "#name", // Nome do contato
+                "Contact.MobilePhone": "#phone", // Telefone do contato
+                "Contact.JobTitle": "#jobTitle", // Cargo do contato
+                "Contact.Email": "#email" // Email do contato
+            },
+            contactFields: {
+                "FullName": "#name", // Nome completo do contato
+                "Phone": "#phone", // Telefone do contato
+                "Email": "#email", // Email do contato
+                "JobTitle": "jobTitle" // Cargo do contato
+            },
+            customFields: {},
+            landingId: "ee689361-07b8-4abd-bdda-8187df02615d",
+            serviceUrl: "https://starkcloud.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+            redirectUrl: "http://localhost:8080/thankyou.html"
+        };
+
+        function createObject() {
+            landing.createObjectFromLanding(config);
+        }
+
+        function initLanding() {
+            landing.initLanding(config);
+        }
+
+        jQuery(document).ready(initLanding);
+    </script>
+
+</body>
+</html>

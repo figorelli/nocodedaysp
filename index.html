@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -95,22 +95,23 @@
         var config = {
             fields: {
                 "Contact": "#name", // Nome do contato
-                "Contact.Account": "#account", // Empresa do contato
                 "Contact.MobilePhone": "#phone", // Telefone do contato
                 "Contact.JobTitle": "#jobTitle", // Cargo do contato
                 "Contact.Email": "#email" // Email do contato
             },
             contactFields: {
                 "FullName": "#name", // Nome completo do contato
-                "Contact.Account": "#account", // Empresa do contato
                 "Phone": "#phone", // Telefone do contato
                 "Email": "#email", // Email do contato
-                "JobTitle": "jobTitle" // Cargo do contato
+                "JobTitle": "#jobTitle" // Cargo do contato
             },
-            customFields: {},
+            customFields: {
+                "SCOrigenLead": "#scOrigenLead", // Origem do lead
+                "SCArea": "#scArea" // Área
+            },
             landingId: "ee689361-07b8-4abd-bdda-8187df02615d",
             serviceUrl: "https://starkcloud.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-            redirectUrl: "http://localhost:8080/thankyou.html"
+            redirectUrl: "https://figorelli.github.io/nocodedaysp/thankyou.html"
         };
 
         function createObject() {

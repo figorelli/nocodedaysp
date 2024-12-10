@@ -95,21 +95,22 @@
         var config = {
             fields: {
                 "Contact": "#name", // Nome do contato
-                "Contact.Account": "#account", // Nome da Conta
+                "Contact.Account": "#account", // Empresa do contato
                 "Contact.MobilePhone": "#phone", // Telefone do contato
                 "Contact.JobTitle": "#jobTitle", // Cargo do contato
                 "Contact.Email": "#email" // Email do contato
             },
             contactFields: {
                 "FullName": "#name", // Nome completo do contato
+                "Contact.Account": "#account", // Empresa do contato
                 "Phone": "#phone", // Telefone do contato
                 "Email": "#email", // Email do contato
-                "JobTitle": "#jobTitle", // Cargo do contato
-                "Account": "#account" // Empresa do Contato
-            }
+                "JobTitle": "jobTitle" // Cargo do contato
+            },
+            customFields: {},
             landingId: "ee689361-07b8-4abd-bdda-8187df02615d",
             serviceUrl: "https://starkcloud.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-            redirectUrl: "https://figorelli.github.io/nocodedaysp/thankyou.html"
+            redirectUrl: "http://localhost:8080/thankyou.html"
         };
 
         function createObject() {

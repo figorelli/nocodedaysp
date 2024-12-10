@@ -1,4 +1,4 @@
-e<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -71,14 +71,11 @@ e<!DOCTYPE html>
 
     <img src="starkcloud-logo.webp" alt="StarkCloud" class="logo">
 
-    <!-- Adicionado onSubmit no formulário -->
+    <!-- Adicionado o campo Company -->
     <form class="mainForm" name="landingForm" onSubmit="createObject(); return false;">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
 
-        <label for="account">Empresa:</label>
-        <input type="text" id="account" name="account">
-        
         <label for="jobTitle">Cargo:</label>
         <input type="text" id="jobTitle" name="jobTitle">
 
@@ -88,7 +85,13 @@ e<!DOCTYPE html>
         <label for="phone">Telefone:</label>
         <input type="tel" id="phone" name="phone">
 
-        <input type="submit" value="Reservar sua vaga">
+        <label for="company">Empresa:</label>
+        <input type="text" id="company" name="company">
+
+        <input type="hidden" id="scOrigenLead" name="scOrigenLead" value="No-Code-SP">
+        <input type="hidden" id="scArea" name="scArea" value="Creatio">
+
+        <input type="submit" value="Enviar">
     </form>
 
     <script>
@@ -96,13 +99,12 @@ e<!DOCTYPE html>
             fields: {
                 "Contact": "#name", // Nome do contato
                 "Contact.MobilePhone": "#phone", // Telefone do contato
-                "Contact.Account"; "#account",
                 "Contact.JobTitle": "#jobTitle", // Cargo do contato
-                "Contact.Email": "#email" // Email do contato
+                "Contact.Email": "#email", // Email do contato
+                "Company": "#company" // Nome da empresa
             },
             contactFields: {
                 "FullName": "#name", // Nome completo do contato
-                "Contact.Account"; "#account",
                 "Phone": "#phone", // Telefone do contato
                 "Email": "#email", // Email do contato
                 "JobTitle": "#jobTitle" // Cargo do contato

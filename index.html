@@ -76,6 +76,9 @@
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
 
+        <label for="account">Empresa:</label>
+        <input type="text" id="account" name="account">
+        
         <label for="jobTitle">Cargo:</label>
         <input type="text" id="jobTitle" name="jobTitle">
 
@@ -85,16 +88,14 @@
         <label for="phone">Telefone:</label>
         <input type="tel" id="phone" name="phone">
 
-        <input type="hidden" id="scOrigenLead" name="scOrigenLead" value="No-Code-SP">
-        <input type="hidden" id="scArea" name="scArea" value="Creatio">
-
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Reservar sua vaga.">
     </form>
 
     <script>
         var config = {
             fields: {
                 "Contact": "#name", // Nome do contato
+                "Contacto.Account": "#account", // Nome da Conta
                 "Contact.MobilePhone": "#phone", // Telefone do contato
                 "Contact.JobTitle": "#jobTitle", // Cargo do contato
                 "Contact.Email": "#email" // Email do contato
@@ -103,12 +104,9 @@
                 "FullName": "#name", // Nome completo do contato
                 "Phone": "#phone", // Telefone do contato
                 "Email": "#email", // Email do contato
-                "JobTitle": "#jobTitle" // Cargo do contato
-            },
-            customFields: {
-                "SCOrigenLead": "#scOrigenLead", // Origem do lead
-                "SCArea": "#scArea" // Área
-            },
+                "JobTitle": "#jobTitle", // Cargo do contato
+                "Account": "#account" // Empresa do Contato
+            }
             landingId: "ee689361-07b8-4abd-bdda-8187df02615d",
             serviceUrl: "https://starkcloud.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
             redirectUrl: "https://figorelli.github.io/nocodedaysp/thankyou.html"
